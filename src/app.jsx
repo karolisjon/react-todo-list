@@ -1,7 +1,9 @@
+import Card from "./components/card";
+
 function App() {
   return (
     <div className="App">
-      <h2>test</h2>
+      <Card />
     </div>
   );
 }
