@@ -10,24 +10,3 @@
   transform: translate(-50%, -50%);
   border-radius: 4px;
 }
-
-.card-header {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: flex-end;
-  height: 100px;
-  border-bottom: 1px solid rgb(167, 233, 187);
-}
-
-.card-header__date-container {
-  display: flex;
-}
-
-.card-header__day {
-  font-size: 44px;
-}
-
-.card-header__weekday {
-  padding-bottom: 6px;
-}
