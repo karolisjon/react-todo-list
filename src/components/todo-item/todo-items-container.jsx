@@ -1,6 +1,6 @@
 import React from 'react';
 import TodoItem from '../todo-item/todo-item';
-import '../../styles/UI/todo-item/todo-items-container.css';
+import '../../styles/UI/todo-items/todo-items-container.css';
 
 const TodoItemsContainer = () => {
   return (

@@ -5,10 +5,10 @@ import '../../styles/UI/todo-items/todo-item.css';
 const TodoItemDelete = () => {
   return (
     <button type='button'>
-    <div className='delete-icon'>
-      {<SVGDelete />}
-    </div>
-  </button>
+      <div className='icon'>
+        {<SVGDelete />}
+      </div>
+    </button>
   )
 }
 
