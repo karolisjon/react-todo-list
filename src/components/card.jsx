@@ -1,8 +1,8 @@
 import React from 'react';
 import CardHeader from './card-header';
-import TodoItemsContainer from './todo-items-container';
+import TodoItemsContainer from '../components/todo-item/todo-items-container';
 import '../styles/UI/card.css';
-import AddTodoForm from './add-todo-form';
+import AddTodoForm from '../components/add-todo/add-todo-form';
 
 const Card = () => {
 
