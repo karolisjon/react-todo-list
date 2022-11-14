@@ -1,4 +1,4 @@
-.card-button {
+.add-todo-button {
   display: block;
   height: 60px;
   width: 60px;
@@ -10,7 +10,7 @@
   transition: 0.3s ease-in-out;
 }
 
-.card-button:hover {
+.add-todo-button:hover {
   cursor: pointer;
   background-color: rgb(113, 224, 147);
 }

@@ -1,9 +1,17 @@
 import React from 'react';
+import { ReactComponent as SVGDelete } from '../assets/delete.svg';
 import '../styles/UI/todo-item.css';
 
-const TodoItem = (props) => {
+const TodoItem = ({ children }) => {
   return (
-    <div className='todo-item'>{props.children}</div>
+    <div className='todo-item'>
+      {children}
+      <button type='button'>
+        <div className='delete-icon'>
+          {<SVGDelete />}
+        </div>
+      </button>
+    </div>
   )
 }
 
