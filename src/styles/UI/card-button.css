@@ -12,4 +12,11 @@
   border-radius: 50%;
   background-color: rgb(167, 233, 187);
   border: none;
+  font-size: 30px;
+  transition: 0.3s ease-in-out;
+}
+
+.card-button:hover {
+  cursor: pointer;
+  background-color: rgb(113, 224, 147);
 }
