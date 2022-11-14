@@ -1,14 +1,8 @@
-.card-button-container {
-  position: absolute;
-  margin: 0;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
 .card-button {
   display: block;
   height: 60px;
   width: 60px;
+  margin-top: 30px;
   border-radius: 50%;
   background-color: rgb(167, 233, 187);
   border: none;
