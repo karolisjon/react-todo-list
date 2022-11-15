@@ -1,18 +1,19 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import TodoItem from '../todo-item';
 import './todo-items-container.css';
 
-const items = [
-  { id: 1, text: 'get a haircut' },
-  { id: 2, text: 'wash dishes' },
-  { id: 3, text: 'take a shower' },
-];
-
 const TodoItemsContainer = () => {
+  const [todoItems, setTodoItems] = useState([]);
+
+  useEffect(() => {
+    fetch('http://localhost:8000/todoItems')
+    .then((response) => response.json())
+    .then((fetchedTodoItems) => setTodoItems(fetchedTodoItems));
+  }, []);
 
   return (
     <div className='todo-items-container'>
-      {items.map(({ id, text }) => (
+      {todoItems.map(({ id, text }) => (
         <TodoItem key={id} text={text} />
       ))}
     </div>
