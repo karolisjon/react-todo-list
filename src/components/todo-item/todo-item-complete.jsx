@@ -1,6 +1,6 @@
 import React from 'react';
 import { ReactComponent as SVGComplete } from '../../assets/complete.svg';
-import '../../styles/UI/todo-items/todo-item.css';
+import '../../components/todo-item/todo-item.css';
 
 const TodoItemComplete = () => {
   return (

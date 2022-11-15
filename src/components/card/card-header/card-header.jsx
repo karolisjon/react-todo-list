@@ -1,5 +1,5 @@
 import React from 'react';
-import '../styles/UI/card-header.css';
+import '../card-header/card-header.css';
 
 const CardHeader = () => {
   const date = new Date();

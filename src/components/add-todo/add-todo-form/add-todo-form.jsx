@@ -1,7 +1,7 @@
 import React from 'react';
-import AddTodoButton from '../add-todo/add-todo-button';
-import '../../styles/UI/add-todo/add-todo-input.css';
-import '../../styles/UI/add-todo/add-todo-button-container.css';
+import AddTodoButton from '../add-todo-button/add-todo-button';
+import '../../add-todo/add-todo-form/add-todo-input.css';
+import '../../add-todo/add-todo-button/add-todo-button-container.css';
 
 const AddTodoForm = () => {
   return (
