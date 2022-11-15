@@ -5,7 +5,6 @@ import TodoItemsContainer from '../todo-item/todo-items-container/todo-items-con
 import '../../components/card/card.css';
 
 const Card = () => {
-
   return (
     <div className='card'>
       <CardHeader />

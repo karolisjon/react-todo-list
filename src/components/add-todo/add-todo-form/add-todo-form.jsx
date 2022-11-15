@@ -5,8 +5,12 @@ import '../../add-todo/add-todo-button/add-todo-button-container.css';
 
 const AddTodoForm = () => {
   return (
-    <form action="submit">
-      <input type="text" placeholder='Add your todo...' className='add-todo-input' />
+    <form>
+      <input
+        type="text"
+        placeholder='Add your todo...'
+        className='add-todo-input'
+      />
       <div className='add-todo-button-container'>
         <AddTodoButton />
       </div>

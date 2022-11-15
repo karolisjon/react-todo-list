@@ -4,7 +4,7 @@ import '../add-todo-button/add-todo-button.css';
 const AddTodoButton = () => {
 
   return (
-      <button type='button' className='add-todo-button'>+</button>
+      <button type='submit' className='add-todo-button'>+</button>
   )
 }
 
