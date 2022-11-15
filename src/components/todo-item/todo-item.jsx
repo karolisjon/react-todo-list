@@ -1,11 +1,12 @@
 import React from 'react';
-import TodoItemComplete from './todo-item-complete';
-import TodoItemDelete from './todo-item-delete';
+import TodoItemComplete from './todo-item-actions/todo-item-complete';
+import TodoItemDelete from './todo-item-actions/todo-item-delete';
+import './todo-item.css';
 
-const TodoItem = ({ children }) => {
+const TodoItem = ({ text }) => {
   return (
     <div className='todo-item'>
-      {children}
+      <p>{text}</p>
       <div>
         <TodoItemComplete />
         <TodoItemDelete />
