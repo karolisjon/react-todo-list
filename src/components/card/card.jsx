@@ -6,7 +6,6 @@ import '../../components/card/card.css';
 
 const Card = () => {
   const [todoItems, setTodoItems] = useState([]);
-  const [newTodoItem, setNewTodoItem] = useState([]);
 
   useEffect(() => {
     (async () => {
@@ -19,11 +18,11 @@ const Card = () => {
   const handleAddTodoItem = (enteredText) => {
     setTodoItems(prevTodoItems => {
       const updatedTodoItems = [...prevTodoItems];
-      updatedTodoItems.unshift({ id: Math.random().toString(), text: enteredText});
-
+      updatedTodoItems.unshift({ id: Math.random().toString().slice(2, 10), text: enteredText});
+      
       return updatedTodoItems;
     })
-  }
+  };
 
   console.log(todoItems);
 

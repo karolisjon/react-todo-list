@@ -13,7 +13,8 @@ const AddTodoForm = ({ onAddTodoItem }) => {
   const handleTodoSubmit = (event) => {
     event.preventDefault();
     onAddTodoItem(enteredValue);
-  }
+    setEnteredValue('');
+  };
 
   return (
     <form onSubmit={handleTodoSubmit}>
@@ -22,6 +23,7 @@ const AddTodoForm = ({ onAddTodoItem }) => {
         placeholder='Add your todo...'
         className='add-todo-input'
         onChange={handleInputChange}
+        value={enteredValue}
       />
       <div className='add-todo-button-container'>
         <AddTodoButton />
