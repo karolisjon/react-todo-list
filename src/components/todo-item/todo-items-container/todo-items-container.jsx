@@ -6,9 +6,11 @@ const TodoItemsContainer = () => {
   const [todoItems, setTodoItems] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:8000/todoItems')
-    .then((response) => response.json())
-    .then((fetchedTodoItems) => setTodoItems(fetchedTodoItems));
+    (async () => {
+      let response = await fetch('http://localhost:8000/todoItems');
+      let data = await response.json();
+      setTodoItems(data);
+    })();
   }, []);
 
   return (
