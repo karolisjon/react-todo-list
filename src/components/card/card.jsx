@@ -27,8 +27,6 @@ const Card = () => {
     })
   };
 
-  console.log(todoItems);
-
   return (
     <div className='card'>
       <CardHeader />

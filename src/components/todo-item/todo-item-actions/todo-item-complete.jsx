@@ -2,9 +2,10 @@ import React from 'react';
 import { ReactComponent as SVGComplete } from '../../../assets/complete.svg';
 import '../../../components/todo-item/todo-item.css';
 
-const TodoItemComplete = () => {
+const TodoItemComplete = ({ onComplete }) => {
+
   return (
-    <button type='button'>
+    <button type='button' onClick={onComplete}>
       <div className='icon'>
         {<SVGComplete />}
       </div>

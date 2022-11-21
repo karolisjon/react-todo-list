@@ -24,6 +24,7 @@ const AddTodoForm = ({ onAddTodoItem }) => {
         className='add-todo-input'
         onChange={handleInputChange}
         value={enteredValue}
+        required
       />
       <div className='add-todo-button-container'>
         <AddTodoButton />
