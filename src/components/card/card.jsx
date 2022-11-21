@@ -18,8 +18,11 @@ const Card = () => {
   const handleAddTodoItem = (enteredText) => {
     setTodoItems(prevTodoItems => {
       const updatedTodoItems = [...prevTodoItems];
-      updatedTodoItems.unshift({ id: Math.random().toString().slice(2, 10), text: enteredText});
-      
+      updatedTodoItems.unshift({
+        id: Math.random().toString().slice(2, 10),
+        text: enteredText
+      });
+
       return updatedTodoItems;
     })
   };
@@ -29,8 +32,8 @@ const Card = () => {
   return (
     <div className='card'>
       <CardHeader />
-      <AddTodoForm onAddTodoItem={handleAddTodoItem}/>
-      <TodoItemsContainer todoItems={todoItems}/>
+      <AddTodoForm onAddTodoItem={handleAddTodoItem} />
+      <TodoItemsContainer todoItems={todoItems} />
     </div>
   )
 }
