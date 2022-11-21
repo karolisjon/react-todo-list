@@ -10,12 +10,11 @@ const TodoItem = ({ text }) => {
     setIsComplete(!isComplete);
   };
 
-
   return (
     <div className={`todo-item ${isComplete ? 'complete' : ''}`}>
       <p>{text}</p>
       <div>
-        <TodoItemComplete onComplete={handleIsComplete} isComplete={isComplete}/>
+        <TodoItemComplete onComplete={handleIsComplete}/>
         <TodoItemDelete />
       </div>
     </div>
