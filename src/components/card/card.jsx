@@ -27,11 +27,19 @@ const Card = () => {
     })
   };
 
+  const handleDelete = (itemId) => {
+    setTodoItems(prevTodoItems => prevTodoItems.filter((item) => item.id !== itemId))
+    console.log('itemId', itemId);
+  };
+
   return (
     <div className='card'>
       <CardHeader />
       <AddTodoForm onAddTodoItem={handleAddTodoItem} />
-      <TodoItemsContainer todoItems={todoItems} />
+      <TodoItemsContainer
+        todoItems={todoItems}
+        onDelete={handleDelete}
+      />
     </div>
   )
 }

@@ -3,19 +3,23 @@ import TodoItemComplete from './todo-item-actions/todo-item-complete';
 import TodoItemDelete from './todo-item-actions/todo-item-delete';
 import './todo-item.css';
 
-const TodoItem = ({ text }) => {
+const TodoItem = (props) => {
   const [isComplete, setIsComplete] = useState(false);
 
   const handleIsComplete = () => {
     setIsComplete(!isComplete);
   };
 
+  const deleteHandler = () => {
+    props.onDelete(props.id);
+  }
+
   return (
     <div className={`todo-item ${isComplete ? 'complete' : ''}`}>
-      <p>{text}</p>
+      <p>{props.text}</p>
       <div>
         <TodoItemComplete onComplete={handleIsComplete}/>
-        <TodoItemDelete />
+        <TodoItemDelete onDelete={deleteHandler}/>
       </div>
     </div>
   )
