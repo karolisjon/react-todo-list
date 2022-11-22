@@ -2,16 +2,16 @@ import React from 'react';
 import TodoItem from '../todo-item';
 import './todo-items-container.css';
 
-const TodoItemsContainer = (props) => {
+const TodoItemsContainer = ({ todoItems, onDelete }) => {
 
   return (
     <div className='todo-items-container'>
-      {props.todoItems.map((item) => (
+      {todoItems.map(({ id, text }) => (
         <TodoItem 
-        key={item.id} 
-        id={item.id}
-        text={item.text}
-        onDelete={props.onDelete}
+        key={id} 
+        id={id}
+        text={text}
+        onDelete={onDelete}
         />
       ))}
     </div>

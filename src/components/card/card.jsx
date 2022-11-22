@@ -27,9 +27,11 @@ const Card = () => {
     })
   };
 
-  const handleDelete = (itemId) => {
-    setTodoItems(prevTodoItems => prevTodoItems.filter((item) => item.id !== itemId))
-    console.log('itemId', itemId);
+  const handleDelete = (todoItemId) => {
+    setTodoItems(prevTodoItems => {
+      const updatedTodoItems = prevTodoItems.filter((todoItem) => todoItem.id !== todoItemId);
+      return updatedTodoItems;
+    });
   };
 
   return (
