@@ -10,7 +10,7 @@ const TodoItem = ({ id, text, onDelete }) => {
     setIsComplete(!isComplete);
   };
 
-  const deleteHandler = () => {
+  const handleDeleteTodoItemById = () => {
     onDelete(id);
   };
 
@@ -19,7 +19,7 @@ const TodoItem = ({ id, text, onDelete }) => {
       <p>{text}</p>
       <div>
         <TodoItemComplete onComplete={handleIsComplete}/>
-        <TodoItemDelete onDelete={deleteHandler}/>
+        <TodoItemDelete onDelete={handleDeleteTodoItemById}/>
       </div>
     </div>
   )
