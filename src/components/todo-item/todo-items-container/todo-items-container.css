@@ -1,3 +1,12 @@
 .todo-items-container {
   margin-top: 70px;
 }
+
+.empty { 
+  display: flex;
+  justify-content: center;
+}
+
+img {
+  width: 100%;
+}
