@@ -3,15 +3,15 @@ import CardHeader from '../../components/card/card-header/card-header';
 import AddTodoForm from '../add-todo/add-todo-form/add-todo-form';
 import TodoItemsContainer from '../todo-item/todo-items-container/todo-items-container';
 import '../../components/card/card.css';
+import TodoItemsService from '../../services/todo-item-service';
 
 const Card = () => {
   const [todoItems, setTodoItems] = useState([]);
 
   useEffect(() => {
     (async () => {
-      let response = await fetch('http://localhost:8000/todoItems');
-      let data = await response.json();
-      setTodoItems(data);
+      const fetchedTodoItems = await TodoItemsService.fetchAll();
+      setTodoItems(fetchedTodoItems);
     })();
   }, []);
 
