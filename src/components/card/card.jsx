@@ -15,17 +15,36 @@ const Card = () => {
     })();
   }, []);
 
-  const handleAddTodoItem = (enteredText) => {
+  // const handleAddTodoItem = (enteredText) => {
+  //   setTodoItems(prevTodoItems => {
+  //     const updatedTodoItems = [...prevTodoItems];
+  //     updatedTodoItems.unshift({
+  //       id: Math.random().toString().slice(2, 10),
+  //       text: enteredText
+  //     });
+
+  //     return updatedTodoItems;
+  //   })
+  // };
+
+  const fetchAllTodoItems = async () => {
+    const fetchedTodoItems = await TodoItemsService.fetchAll();
+    setTodoItems(fetchedTodoItems);
+  }
+
+  const handleAddTodoItem = async (enteredText) => {
+    const newTodoItem = await TodoItemsService.create({
+      id: Math.random().toString().slice(2, 10),
+      text: enteredText
+    });
+
     setTodoItems(prevTodoItems => {
       const updatedTodoItems = [...prevTodoItems];
-      updatedTodoItems.unshift({
-        id: Math.random().toString().slice(2, 10),
-        text: enteredText
-      });
-
-      return updatedTodoItems;
+      updatedTodoItems.unshift(newTodoItem);
     })
-  };
+
+    await fetchAllTodoItems();
+  }
 
   const handleDelete = (todoItemId) => {
     setTodoItems(prevTodoItems => {
