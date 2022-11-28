@@ -8,10 +8,14 @@ import '../../components/card/card.css';
 const Card = () => {
   const [todoItems, setTodoItems] = useState([]);
 
+  const fetchAllTodoItems = async () => {
+    const fetchedTodoItems = await TodoItemsService.fetchAll();
+    setTodoItems(fetchedTodoItems);
+  };
+
   useEffect(() => {
     (async () => {
-      const fetchedTodoItems = await TodoItemsService.fetchAll();
-      setTodoItems(fetchedTodoItems);
+      fetchAllTodoItems();
     })();
   }, []);
 
@@ -26,14 +30,13 @@ const Card = () => {
       updatedTodoItems.push(newTodoItem);
 
       return updatedTodoItems;
-    })
-  }
+    });
+  };
 
   const handleDelete = async (id) => {
     await TodoItemsService.remove(id);
-    const fetchedTodoItems = await TodoItemsService.fetchAll();
-    setTodoItems(fetchedTodoItems);
-  }
+    fetchAllTodoItems();
+  };
 
   return (
     <div className='card'>
