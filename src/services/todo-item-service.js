@@ -23,9 +23,18 @@ const create = async (props) => {
   return todoItem;
 };
 
+const remove = async (id) => {
+  await fetch(`${serverAddress}/${collection}/${id}`, {
+    method: 'DELETE'
+  });
+
+  return true;
+}
+
 const TodoItemsService = {
   fetchAll,
   create,
+  remove,
 };
 
 export default TodoItemsService;

@@ -29,12 +29,11 @@ const Card = () => {
     })
   }
 
-  const handleDelete = (todoItemId) => {
-    setTodoItems(prevTodoItems => {
-      const updatedTodoItems = prevTodoItems.filter((todoItem) => todoItem.id !== todoItemId);
-      return updatedTodoItems;
-    });
-  };
+  const handleDelete = async (id) => {
+    await TodoItemsService.remove(id);
+    const fetchedTodoItems = await TodoItemsService.fetchAll();
+    setTodoItems(fetchedTodoItems);
+  }
 
   return (
     <div className='card'>
