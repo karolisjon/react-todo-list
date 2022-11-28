@@ -29,12 +29,32 @@ const remove = async (id) => {
   });
 
   return true;
+};
+
+const complete = async (id) => {
+  const isComplete = {
+    isComplete: !Boolean()
+  }
+
+  const response = await fetch(`${serverAddress}/${collection}/${id}`, {
+    method: 'PATCH',
+    headers: {
+      'Content-Type': 'application/json',
+      'Accept': 'application/json',
+    },
+    body: JSON.stringify(isComplete),
+  });
+  console.log('response isComplete', isComplete.isComplete);
+  const data = await response.json();
+
+  return data;
 }
 
 const TodoItemsService = {
   fetchAll,
   create,
   remove,
+  complete
 };
 
 export default TodoItemsService;

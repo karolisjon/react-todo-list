@@ -22,7 +22,8 @@ const Card = () => {
   const handleAddTodoItem = async (enteredText) => {
     const newTodoItem = await TodoItemsService.create({
       id: Math.random().toString().slice(2, 10),
-      text: enteredText
+      text: enteredText,
+      isComplete: false
     });
 
     setTodoItems(prevTodoItems => {
@@ -38,6 +39,11 @@ const Card = () => {
     fetchAllTodoItems();
   };
 
+  const handleComplete = async (id) => {
+    await TodoItemsService.complete(id);
+    fetchAllTodoItems();
+  }
+
   return (
     <div className='card'>
       <CardHeader />
@@ -45,6 +51,7 @@ const Card = () => {
       <TodoItemsContainer
         todoItems={todoItems}
         onDelete={handleDelete}
+        onComplete={handleComplete}
       />
     </div>
   )

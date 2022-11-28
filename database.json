@@ -2,15 +2,23 @@
   "todoItems": [
     {
       "id": "49048551",
-      "text": "get a haircut"
+      "text": "get a haircut",
+      "isComplete": false
     },
     {
       "id": "2578356",
-      "text": "wash dishes"
+      "text": "wash dishes",
+      "isComplete": false
     },
     {
       "id": "31426795",
-      "text": "take a shower"
+      "text": "take a shower",
+      "isComplete": false
+    },
+    {
+      "id": "05289697",
+      "text": "aaaaa",
+      "isComplete": true
     }
   ]
 }
