@@ -31,20 +31,16 @@ const remove = async (id) => {
   return true;
 };
 
-const complete = async (id) => {
-  const isComplete = {
-    isComplete: !Boolean()
-  }
-
+const complete = async (id, state) => {
   const response = await fetch(`${serverAddress}/${collection}/${id}`, {
     method: 'PATCH',
     headers: {
       'Content-Type': 'application/json',
       'Accept': 'application/json',
     },
-    body: JSON.stringify(isComplete),
+    body: JSON.stringify({ isComplete: state}),
   });
-  console.log('response isComplete', isComplete.isComplete);
+
   const data = await response.json();
 
   return data;

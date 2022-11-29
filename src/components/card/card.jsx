@@ -39,10 +39,9 @@ const Card = () => {
     fetchAllTodoItems();
   };
 
-  const handleComplete = async (id) => {
-    await TodoItemsService.complete(id);
-    fetchAllTodoItems();
-  }
+  const handleComplete = async (id, state) => {
+    await TodoItemsService.complete(id, state);
+  };
 
   return (
     <div className='card'>

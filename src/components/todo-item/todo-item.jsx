@@ -7,7 +7,7 @@ const TodoItem = ({ id, text, onDelete, onComplete }) => {
   const [isComplete, setIsComplete] = useState(false);
 
   const handleIsCompleteById = () => {
-    onComplete(id);
+    onComplete(id, !isComplete);
     setIsComplete(!isComplete);
   };
 
@@ -16,7 +16,7 @@ const TodoItem = ({ id, text, onDelete, onComplete }) => {
   };
 
   return (
-    <div className={`todo-item ${isComplete ? 'complete' : ''}`}>
+    <div className={`todo-item ${isComplete ? 'complete' : ''}`} >
       <p>{text}</p>
       <div>
         <TodoItemComplete onComplete={handleIsCompleteById}/>
