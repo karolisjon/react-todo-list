@@ -4,12 +4,12 @@
 
 1. Install dependencies 
 
-### `npm i`
+## `npm i`
 
 2. Start the client
 
-### `npm start`
+## `npm start`
 
 3. Start JSON-server for the data
 
-### `npm run server`
+## `npm run server`
