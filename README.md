@@ -2,14 +2,17 @@
 
 ## How to launch the app
 
-1. Install dependencies 
+## 1. Install dependencies
+```
+npm i
+```
 
-### `npm i`
+## 2. Start the client
+```
+`npm start`
+```
 
-2. Start the client
-
-### `npm start`
-
-3. Start JSON-server for the data
-
+### 3. Start JSON-server for the data
+```
 ### `npm run server`
+```
