@@ -3,16 +3,20 @@ import CardHeader from '../../components/card/card-header/card-header';
 import AddTodoForm from '../add-todo/add-todo-form/add-todo-form';
 import TodoItemsContainer from '../todo-item/todo-items-container/todo-items-container';
 import TodoItemsService from '../../services/todo-item-service';
-import '../../components/card/card.css';
 import Modal from '../modal/modal';
+import '../../components/card/card.css';
 
 const Card = () => {
   const [todoItems, setTodoItems] = useState([]);
-  const [isOpen, setIsOpen] = useState(false);
+  const [modalOpen, setModalOpen] = useState(false);
 
   const handleIsOpen = () => {
-    setIsOpen(!isOpen);
-  }
+    setModalOpen(!modalOpen);
+  };
+
+  const handleCloseModal = () => {
+    setModalOpen(false);
+  };
 
   const fetchAllTodoItems = async () => {
     const fetchedTodoItems = await TodoItemsService.fetchAll();
@@ -59,7 +63,10 @@ const Card = () => {
         onComplete={handleComplete}
         onDelete={handleDelete}
       />
-      <Modal open={isOpen}/>
+      <Modal
+        open={modalOpen}
+        onClose={handleCloseModal}
+      />
     </div>
   )
 }
