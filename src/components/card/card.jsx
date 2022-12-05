@@ -4,9 +4,15 @@ import AddTodoForm from '../add-todo/add-todo-form/add-todo-form';
 import TodoItemsContainer from '../todo-item/todo-items-container/todo-items-container';
 import TodoItemsService from '../../services/todo-item-service';
 import '../../components/card/card.css';
+import Modal from '../modal/modal';
 
 const Card = () => {
   const [todoItems, setTodoItems] = useState([]);
+  const [isOpen, setIsOpen] = useState(false);
+
+  const handleIsOpen = () => {
+    setIsOpen(!isOpen);
+  }
 
   const fetchAllTodoItems = async () => {
     const fetchedTodoItems = await TodoItemsService.fetchAll();
@@ -49,9 +55,11 @@ const Card = () => {
       <AddTodoForm onAddTodoItem={handleAddTodoItem} />
       <TodoItemsContainer
         todoItems={todoItems}
-        onDelete={handleDelete}
+        onEdit={handleIsOpen}
         onComplete={handleComplete}
+        onDelete={handleDelete}
       />
+      <Modal open={isOpen}/>
     </div>
   )
 }

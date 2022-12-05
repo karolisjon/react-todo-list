@@ -3,7 +3,7 @@ import TodoItem from '../todo-item';
 import NoTodoItems from '../../../assets/no-item-found.jpg';
 import './todo-items-container.css';
 
-const TodoItemsContainer = ({ todoItems, onDelete, onComplete }) => {
+const TodoItemsContainer = ({ todoItems, onEdit, onDelete, onComplete }) => {
 
   return (
     <div className='todo-items-container'>
@@ -16,8 +16,9 @@ const TodoItemsContainer = ({ todoItems, onDelete, onComplete }) => {
           key={id}
           id={id}
           text={text}
-          onDelete={onDelete}
+          onEdit={onEdit}
           onComplete={onComplete}
+          onDelete={onDelete}
         />
       ))}
     </div>

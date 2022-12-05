@@ -4,7 +4,7 @@ import TodoItemDelete from './todo-item-actions/todo-item-delete';
 import TodoItemEdit from './todo-item-actions/todo-item-edit';
 import './todo-item.css';
 
-const TodoItem = ({ id, text, onDelete, onComplete }) => {
+const TodoItem = ({ id, text, onEdit, onDelete, onComplete }) => {
   const [isComplete, setIsComplete] = useState(false);
 
   const handleIsCompleteById = () => {
@@ -20,9 +20,7 @@ const TodoItem = ({ id, text, onDelete, onComplete }) => {
     <div className={`todo-item ${isComplete ? 'complete' : ''}`} >
       <p>{text}</p>
       <div>
-        <TodoItemEdit 
-        // onEdit={handleEditTodoItem}
-        />
+        <TodoItemEdit onEdit={onEdit} />
         <TodoItemComplete onComplete={handleIsCompleteById} />
         <TodoItemDelete onDelete={handleDeleteTodoItemById} />
       </div>
