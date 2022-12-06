@@ -16,5 +16,5 @@ npm i
 
 ### 3. Start JSON-server for the data
 ```
-### `npm run server`
+`npm run server`
 ```
