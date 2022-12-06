@@ -9,10 +9,10 @@ const Modal = ({ open, onClose }) => {
 
   return ReactDOM.createPortal(
     <div className='modal'>
-      <div className='top'>
+      <div className='modal-top'>
         {<SVGError className='error-icon'/>}
       </div>
-      <div className='bottom'>
+      <div className='modal-bottom'>
         <p>You cannot add an empty todo item!</p>
         <button type='action' >
           <div className='close-icon' onClick={onClose}>

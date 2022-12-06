@@ -12,7 +12,7 @@
   box-shadow: 2px 6px 6px 2px rgb(221, 220, 220);
 }
 
-.top {
+.modal-top {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -22,14 +22,7 @@
   border-radius: 4px 4px 0 0 ;
 }
 
-.error-icon {
-  height: 50px;
-  width: 50px;
-  border: 2px solid #fff;
-  border-radius: 50%;
-}
-
-.bottom {
+.modal-bottom {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -37,6 +30,13 @@
   padding: 8px;
   font-size: 16px;
   background-color: #fff;
+}
+
+.error-icon {
+  height: 50px;
+  width: 50px;
+  border: 2px solid #fff;
+  border-radius: 50%;
 }
 
 .close-icon {
