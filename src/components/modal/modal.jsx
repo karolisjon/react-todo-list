@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { ReactComponent as SVGClose } from '../../assets/close.svg';
+import { ReactComponent as SVGError } from '../../assets/error.svg';
 import '../modal/modal.css';
 
 const Modal = ({ open, onClose }) => {
@@ -8,7 +9,10 @@ const Modal = ({ open, onClose }) => {
 
   return ReactDOM.createPortal(
     <div className='modal'>
-      <div className='label-container'>
+      <div className='top'>
+        {<SVGError className='error-icon'/>}
+      </div>
+      <div className='bottom'>
         <p>You cannot add an empty todo item!</p>
         <button type='action' >
           <div className='close-icon' onClick={onClose}>
