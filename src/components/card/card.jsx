@@ -10,12 +10,8 @@ const Card = () => {
   const [todoItems, setTodoItems] = useState([]);
   const [modalOpen, setModalOpen] = useState(false);
 
-  const handleIsOpen = () => {
+  const handleModalOpen = () => {
     setModalOpen(!modalOpen);
-  };
-
-  const handleCloseModal = () => {
-    setModalOpen(false);
   };
 
   const fetchAllTodoItems = async () => {
@@ -42,6 +38,7 @@ const Card = () => {
 
       return updatedTodoItems;
     });
+
   };
 
   const handleDelete = async (id) => {
@@ -56,16 +53,18 @@ const Card = () => {
   return (
     <div className='card'>
       <CardHeader />
-      <AddTodoForm onAddTodoItem={handleAddTodoItem} />
+      <AddTodoForm
+        onAddTodoItem={handleAddTodoItem}
+        onModalOpen={handleModalOpen}
+      />
       <TodoItemsContainer
         todoItems={todoItems}
-        onEdit={handleIsOpen}
         onComplete={handleComplete}
         onDelete={handleDelete}
       />
       <Modal
         open={modalOpen}
-        onClose={handleCloseModal}
+        onClose={() => setModalOpen(!modalOpen)}
       />
     </div>
   )

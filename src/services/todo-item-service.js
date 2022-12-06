@@ -8,6 +8,13 @@ const fetchAll = async () => {
   return todoItems;
 };
 
+const fetchOne = async (id) => {
+  const response = await fetch(`${serverAddress}/${collection}/${id}`);
+  const todoItem = response.json();
+
+  return todoItem;
+};
+
 const create = async (props) => {
   const response = await fetch(`${serverAddress}/${collection}`, {
     method: 'POST',
@@ -48,6 +55,7 @@ const complete = async (id, state) => {
 
 const TodoItemsService = {
   fetchAll,
+  fetchOne,
   create,
   remove,
   complete
